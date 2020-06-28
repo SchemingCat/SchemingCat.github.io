@@ -478,14 +478,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    8 分
                 </div>
                 
 
@@ -664,7 +664,58 @@ public Long del(String key){
 <pre><code>&lt;fieldType name=&quot;text_ik&quot; class=&quot;solr.TextField&quot;&gt;
     &lt;analyzer type=&quot;index&quot;  isMaxWordLength=&quot;false&quot; class=&quot;org.wltea.analyzer.lucene.IKAnalyzer&quot;/&gt;
     &lt;analyzer type=&quot;query&quot;  isMaxWordLength=&quot;true&quot; class=&quot;org.wltea.analyzer.lucene.IKAnalyzer&quot;/&gt;
-&lt;/fieldType&gt;</code></pre>
+&lt;/fieldType&gt;</code></pre><h3 id="solr在java中的使用"><a href="#solr在java中的使用" class="headerlink" title="solr在java中的使用"></a>solr在java中的使用</h3><hr>
+<blockquote>
+<p>创建一个工具类，工具类后面使用T泛型</p>
+</blockquote>
+<pre><code>public class BaseDao&lt;T&gt;{
+    private HttpSolrClient httpSolrClient;
+}</code></pre><blockquote>
+<p>通过有参构造器传入solr的地址来实现选择不同的solr_home</p>
+</blockquote>
+<pre><code>public BaseDao(String url){
+    //创建HttpSolrClient
+    httpSolrClient = new HttpSolrClient(url);
+    //配置解析器
+    httpSolrClient.setParser(new XMLResponseParser());
+    //设置响应时间，时间超过设置时间抛出异常
+    httpSolrClient.setConnectionTimeout(1000);
+}</code></pre><blockquote>
+<p>传入查询条件(solrQuery)和返回的类型来执行solr并获取返回的list</p>
+</blockquote>
+<pre><code>public List&lt;T&gt; SolrHote(SolrQuery solrQuery, Class type){
+    List&lt;T&gt; list = null;
+    try {
+        QueryResponse response = httpSolrClient.query(solrQuery);
+        list = response.getBeans(type);
+    } catch (SolrServerException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
+    } finally {
+        return list;
+    }
+}</code></pre><blockquote>
+<p>使用的示例</p>
+</blockquote>
+<pre><code>// 通过有参构造方法传入solr地址
+private BaseDao&lt;User&gt; baseDao = new BaseDao()&lt;&quot;http://localhost:8080/solr/User&quot;&gt;;
+
+// 获取solr查询的数据
+public void test(){
+    // 查询条件。如果通过有参构造器创建，则表示使用Q查询。通过键值对的方式传入查询条件
+    SolrQuery solrQuery = new SolrQuery(&quot;*:*&quot;);
+    // FQ查询。通过键值对的方式传入查询条件
+    solrQuery.setParam(&quot;keys:test&quot;);
+    // 分页查询
+    solrQuery.setStart(0);  // 当前页数
+    solrQuery.setRows(10);  // 每页显示多少行
+    // 查询的排序方式
+    solrQuery.setSort(&quot;id&quot;,SolrQuery.ORDER.asc);    // 通过id执行升序查询
+    solrQuery.setSort(&quot;id&quot;,SolrQuery.ORDER.desc);   // 通过id执行降序查询
+    // 执行查询方法
+    List&lt;User&gt; list = baseDao.SolrHote(solrQuery, User.class);
+}</code></pre>
             </div>
             <hr/>
 
@@ -1222,7 +1273,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">43.7k</span>&nbsp;字
+                class="white-color">44.1k</span>&nbsp;字
             
             
             

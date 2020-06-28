@@ -489,7 +489,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    12 分
                 </div>
                 
 
@@ -993,7 +993,13 @@ export  JAVA_HOME PATH</code></pre><blockquote>
 <blockquote>
 <p>使用mysql -u root -p进入mysql后记得修改root账户的密码：SET PASSWORD = PASSWORD(‘root’);设置当前登录账号密码为root</p>
 </blockquote>
-
+<h2 id="开放端口"><a href="#开放端口" class="headerlink" title="开放端口"></a>开放端口</h2><h3 id="查看打开的端口"><a href="#查看打开的端口" class="headerlink" title="查看打开的端口"></a>查看打开的端口</h3><pre><code>/etc/init.d/iptables status</code></pre><hr>
+<h3 id="开启端口"><a href="#开启端口" class="headerlink" title="开启端口"></a>开启端口</h3><pre><code>iptables -A INPUT -p tcp --dport 8080 -j ACCEPT </code></pre><blockquote>
+<p>注意：8080可替换成任何想要开启的端口</p>
+</blockquote>
+<hr>
+<h3 id="保存并重启防火墙"><a href="#保存并重启防火墙" class="headerlink" title="保存并重启防火墙"></a>保存并重启防火墙</h3><pre><code>/etc/rc.d/init.d/iptables save
+/etc/init.d/iptables restart</code></pre>
             </div>
             <hr/>
 
@@ -1325,7 +1331,7 @@ export  JAVA_HOME PATH</code></pre><blockquote>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            全程是分布式版本控制系统，通常配合GitHub在编程中会用到，并且由于git支持分布式部署，可以有效、高速的处理从很小到非常大的项目版本管理。
+                            全称是分布式版本控制系统，通常配合GitHub在编程中会用到，并且由于git支持分布式部署，可以有效、高速的处理从很小到非常大的项目版本管理。
                         
                     </div>
                     <div class="publish-info">
@@ -1549,7 +1555,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">43.7k</span>&nbsp;字
+                class="white-color">44.1k</span>&nbsp;字
             
             
             
