@@ -542,21 +542,17 @@
 <p>ComponentScan：括号内写入控制层的地址</p>
 </blockquote>
 <p>在springmvc.xml(SpringMVC)配置文件内加入&lt;mvc:default-servlet-handler&gt;。并且在扫描控制层的代码内加入swagger所在的包路径，让swagger和控制层能一起扫描</p>
-<pre><code>&lt;context:component-scan base-package=&quot;cn.jbit.controller,cn.jbit.swagger&quot;/&gt;</code></pre><blockquote>
-<p>在类上面加上@Api(value=”userController”,description=”说明”)注解，用作网页访问时的类说明</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>在方法上面加上@ApiOperation(value=”说明”,notes=”说明”)注解，用作房爷访问时方法的说明</p>
-</blockquote>
-<blockquote>
-<p>在网页输入localhost:8080/项目名称/swagger-ui.html即可访问控制层和里面的方法。</p>
-</blockquote>
+<pre><code>&lt;context:component-scan base-package=&quot;cn.jbit.controller,cn.jbit.swagger&quot;/&gt;</code></pre><ul>
+<li>在类上面加上@Api(value=”userController”,description=”说明”)注解，用作网页访问时的类说明</li>
+<li>在方法上面加上@ApiOperation(value=”说明”,notes=”说明”)注解，用作房爷访问时方法的说明</li>
+<li>在网页输入localhost:8080/项目名称/swagger-ui.html即可访问控制层和里面的方法。</li>
+</ul>
 <blockquote>
 <blockquote>
 <p>注意：如果在创建控制层方法时没有指定连接方式，则会在网页显示所有的连接方式，如get,psot等。所以建议在使用@RequestMapper()注解时加上属性：method = RequestMethod.GET用于指定连接的方式</p>
 </blockquote>
 </blockquote>
+<hr>
 <h2 id="JavaMail"><a href="#JavaMail" class="headerlink" title="JavaMail"></a>JavaMail</h2><blockquote>
 <p>创建一个userService类，里面写发送邮件和验证邮件的方法。ServiceImpl内加上@Service注解，和对象</p>
 </blockquote>
@@ -573,14 +569,22 @@ private RedisAPI redisAPI;        //将信息添加到Redis中</code></pre><h3 i
 <li>使用dao层的添加方法将注册的信息添加到数据库，配置dao层的对象。注意自动注入</li>
 </ul>
 </li>
+<li>生成激活码<ul>
+<li>使用MD5加密生成随机激活码，调用MD5的静态方法生成随机码</li>
+</ul>
+</li>
+<li>发送邮件<ul>
+<li>创建MailServer和impl实现发送方法：sendActivationMail，注意配置Mailserver对象，并自动注入</li>
+</ul>
+</li>
+<li>激活码存入redis<ul>
+<li>创建redisAPI，调用set方法存入数据，注意配置redisAPI对象，并自动注入</li>
+</ul>
+</li>
 </ol>
-<p>2.生成激活码<br>    * 使用MD5加密生成随机激活码，调用MD5的静态方法生成随机码</p>
-<p>3.发送邮件<br>    * 创建MailServer和impl实现发送方法：sendActivationMail，注意配置Mailserver对象，并自动注入</p>
-<p>4.激活码存入redis<br>    * 创建redisAPI，调用set方法存入数据，注意配置redisAPI对象，并自动注入</p>
 <hr>
-<h3 id="配置配置文件信息"><a href="#配置配置文件信息" class="headerlink" title="配置配置文件信息"></a>配置配置文件信息</h3><blockquote>
-<p>sendActivationMail方法：(传入收件地址和激活码)</p>
-</blockquote>
+<h3 id="配置配置文件信息"><a href="#配置配置文件信息" class="headerlink" title="配置配置文件信息"></a>配置配置文件信息</h3><h4>sendActivationMail方法：(传入收件地址和激活码)</h4>
+
 <pre><code>@Resource
 private SimpleMailMessage simpleMailMessage;
 @Resource
@@ -591,9 +595,9 @@ public void sendActivationMail(String mailTo, String activationCode) {
     simpleMailMessage.setTo(mailTo);
     simpleMailMessage.setText(&quot;您的激活码为：&quot;+activationCode+&quot;；请在30分钟内激活。&quot;);
     mailSender.send(simpleMailMessage);
-}</code></pre><blockquote>
-<p>MailServerImpl的配置文件。装配在applicationContext中。</p>
-</blockquote>
+}</code></pre><hr>
+<h4>MailServerImpl的配置文件。装配在applicationContext中。</h4>
+
 <pre><code>&lt;bean id=&quot;simpleMailMessage&quot; class=&quot;org.springframework.mail.SimpleMailMessage&quot;&gt;
     &lt;property name=&quot;subject&quot; value=&quot;[i旅行]请激活您的账户&quot;&gt;&lt;/property&gt;
     &lt;property name=&quot;from&quot; value=&quot;x18570421676@163.com&quot;&gt;&lt;/property&gt;
@@ -639,9 +643,8 @@ public void sendActivationMail(String mailTo, String activationCode) {
 </li>
 </ul>
 <hr>
-<blockquote>
-<p>redisAPI类</p>
-</blockquote>
+<h4>redisAPI类</h4>
+
 <pre><code>private JedisPool jedisPool;
 
 public JedisPool getJedisPool() {
