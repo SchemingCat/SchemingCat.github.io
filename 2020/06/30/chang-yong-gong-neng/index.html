@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Ajax的基本运用, java,HTML,css">
+    <meta name="keywords" content="常用功能, java,HTML,css">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Ajax的基本运用 | SchemingCat的博客</title>
+    <title>常用功能 | SchemingCat的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Ajax的基本运用</h1>
+                    <h1 class="description center-align post-title">常用功能</h1>
                 </div>
             </div>
         </div>
@@ -440,12 +440,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Ajax/">
-                                <span class="chip bg-color">Ajax</span>
+                            <a href="/tags/Swagger/">
+                                <span class="chip bg-color">Swagger</span>
                             </a>
                         
-                            <a href="/tags/%E5%85%A5%E9%97%A8/">
-                                <span class="chip bg-color">入门</span>
+                            <a href="/tags/JavaMail/">
+                                <span class="chip bg-color">JavaMail</span>
+                            </a>
+                        
+                            <a href="/tags/Token/">
+                                <span class="chip bg-color">Token</span>
                             </a>
                         
                     </div>
@@ -456,8 +460,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/JavaScript/" class="post-category">
-                                JavaScript
+                            <a href="/categories/Java/" class="post-category">
+                                Java
                             </a>
                         
                     </div>
@@ -469,7 +473,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-08
+                    2020-06-30
                 </div>
                 
 
@@ -478,14 +482,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    868
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    6 分
                 </div>
                 
 
@@ -500,121 +504,259 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <a id="more"></a>
-
-<h2 id="Ajax是什么"><a href="#Ajax是什么" class="headerlink" title="Ajax是什么"></a>Ajax是什么</h2><blockquote>
-<p>Ajax是一种技术方案，但并不是一种新技术。它依赖现有的CSS/HTML/JavaScript，而其中最核心的依赖是浏览器提供的XMLHttpRequest对象，这个对象使得浏览器可以发出HTTP请求与接收HTTP响应。实现了在页面不刷新的情况下和服务器进行数据交互。</p>
+                <h2 id="Swagger"><a href="#Swagger" class="headerlink" title="Swagger"></a>Swagger</h2><h3 id="什么是Swagger"><a href="#什么是Swagger" class="headerlink" title="什么是Swagger"></a>什么是Swagger</h3><blockquote>
+<p>Swagger前后端分离使用的一个功能</p>
 </blockquote>
-<h2 id="为什么要使用Ajax-Ajax的好处"><a href="#为什么要使用Ajax-Ajax的好处" class="headerlink" title="为什么要使用Ajax / Ajax的好处"></a>为什么要使用Ajax / Ajax的好处</h2><blockquote>
-<p>在传统的web应用中，每次请求都生成新的页面，前一个请求没响应则后一个请求不能发送。Ajax就是为了弥补的不足而诞生的。使用Ajax可以进行局部刷新数据。</p>
+<h3 id="使用swagger"><a href="#使用swagger" class="headerlink" title="使用swagger"></a>使用swagger</h3><blockquote>
+<p>在pom.xml导入对应的jar包</p>
 </blockquote>
-<h2 id="ajax的常用参数"><a href="#ajax的常用参数" class="headerlink" title="$.ajax的常用参数"></a>$.ajax的常用参数</h2><table>
-<thead>
-<tr>
-<th align="center"><strong><center>参数</center></strong></th>
-<th align="center"><strong><center>类型</center></strong></th>
-<th align="left"><strong><center>说明</center></strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">url</td>
-<td align="center">String</td>
-<td align="left"><strong>发送请求的地址，默认为当前地址;</strong></td>
-</tr>
-<tr>
-<td align="center">type</td>
-<td align="center">String</td>
-<td align="left"><strong>请求方式</strong>（<em>post/get;默认get</em>）<strong>，1.9.0后可用method替换</strong>;</td>
-</tr>
-<tr>
-<td align="center">data</td>
-<td align="center">PlainObject或String或Arra</td>
-<td align="left"><strong>发送到服务器的数据</strong>;</td>
-</tr>
-<tr>
-<td align="center">dataType</td>
-<td align="center">String</td>
-<td align="left"><strong>预期返回的数据类型，可用的有</strong> <em>XML，HTML，Scipt，JSON，JSONP，Text</em>;</td>
-</tr>
-<tr>
-<td align="center">beforeSend</td>
-<td align="center">function(jqXHR jqxhr,PlainObject settings){}</td>
-<td align="left"><strong>发送请求前调用的函数，返回false将终止发送参数</strong>;<br/><br/><strong>jqxhr</strong>：<em>可选，是XMLHttpRequest的超集</em>;<br/><br/><strong>settings</strong>：<em>可选，当前ajax方法的settings对象</em>;</td>
-</tr>
-<tr>
-<td align="center">success</td>
-<td align="center">function(任意类型 result,String textStatus,jqXHR jqxhr){}</td>
-<td align="left"><strong>请求成功后调用的参数参数</strong>;<br/><br/><strong>result</strong>：<em>可选，由服务器返回的数据</em>;<br/><br/><strong>textStatus</strong>：<em>可选，描述请求状态的字符串</em>;<br/><br/><strong>jqxhr</strong>：<em>可选</em>;</td>
-</tr>
-<tr>
-<td align="center">error</td>
-<td align="center">function(jqXHR jqxhr,String textStatus,String errorThrown){}</td>
-<td align="left"><strong>请求失败时调用的函数参数</strong><br/><br/><strong>jqxhr</strong>：<em>可选</em><br/><br/><strong>textStatus</strong>：<em>可选，错误信息</em><br/><br/><em>errorThrown*<em>：</em>可选，文本描述的Http状态</em></td>
-</tr>
-<tr>
-<td align="center">complete</td>
-<td align="center">function(任意类型 result,String textStatus){}</td>
-<td align="left"><strong>请求完成后调用的函数（请求成功或失败均调用）</strong>;<br/><br/> <strong>jqxhr</strong>：<em>可选</em>;<br/><br/><strong>textStatus</strong>：<em>可选，描述请求状态的字符串</em>;</td>
-</tr>
-<tr>
-<td align="center">timeout</td>
-<td align="center">Number</td>
-<td align="left"><strong>设置请求超时时间</strong></td>
-</tr>
-<tr>
-<td align="center">global</td>
-<td align="center">Boolean</td>
-<td align="left"><strong>默认为</strong> <em>true</em> <strong>，表示是否出触发全局Ajax事件</strong></td>
-</tr>
-</tbody></table>
-<center><font size="2">$.ajax 常用参数</font></center>
-
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+    &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;
+    &lt;version&gt;2.6.1&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+    &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;
+    &lt;version&gt;2.6.1&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.google.guava&lt;/groupId&gt;
+    &lt;artifactId&gt;guava&lt;/artifactId&gt;
+    &lt;version&gt;19.0&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+    &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+    &lt;version&gt;1.2.47&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+    &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
+    &lt;version&gt;2.9.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><blockquote>
+<p>创建一个swagger类，继承WebMvcConfigurationSupport。同时在类上面加上注解：@ComponentScan(basePackages=(“cn.jbit.controller”))</p>
+</blockquote>
+<pre><code>@EnableSwagger2
+@Configuration</code></pre><blockquote>
+<p>ComponentScan：括号内写入控制层的地址</p>
+</blockquote>
+<p>在springmvc.xml(SpringMVC)配置文件内加入&lt;mvc:default-servlet-handler&gt;。并且在扫描控制层的代码内加入swagger所在的包路径，让swagger和控制层能一起扫描</p>
+<pre><code>&lt;context:component-scan base-package=&quot;cn.jbit.controller,cn.jbit.swagger&quot;/&gt;</code></pre><blockquote>
+<p>在类上面加上@Api(value=”userController”,description=”说明”)注解，用作网页访问时的类说明</p>
+</blockquote>
 <hr>
-<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><pre><code>$.ajax([settings])  //[settings]:配置项，均为键值对格式</code></pre><ul>
-<li><h2 id="JSP页面"><a href="#JSP页面" class="headerlink" title="JSP页面"></a>JSP页面</h2></li>
-</ul>
-<pre><code>$.ajax({
-    &quot;url&quot;:&quot;Serverlet&quot;,                    //提交的url(Serverlet名字)路径
-    &quot;type&quot;:&quot;get/post&quot;,                    //提交方式(分为get和post)
-    &quot;data&quot;:&quot;name=&quot;+userName,            //传递参数
-    &quot;dataType&quot;:&quot;text&quot;,                    //返回类型(预计返回类型，有：XML，HTML，Scipt，JSON，JSONP，Text)
-    &quot;success&quot;:function(data){  },        //执行成功后运行方法
-    &quot;error&quot;:&quot;function(data){  }&quot;        //执行失败后运行方法
-})</code></pre><hr>
-<ul>
-<li><h2 id="Serverlet类"><a href="#Serverlet类" class="headerlink" title="Serverlet类"></a>Serverlet类</h2></li>
-</ul>
 <blockquote>
-<p>注意：servlet类需要继承httpservlet，然后实现get和post方法。根据提交的方式不同，进入的方法也不相同</p>
+<p>在方法上面加上@ApiOperation(value=”说明”,notes=”说明”)注解，用作房爷访问时方法的说明</p>
 </blockquote>
-<pre><code>public void doPost(HttpServletRequest request,HttpServletResponse response){
-    response.setContentType(&quot;text/html;charset=UTF-8&quot;);
-    PrintWriter out = response.getWriter();
-
-    Out.print();    //将结果返回给JSP页面
-
-    Out.flush();
-    Out.close();
-}</code></pre><hr>
-<h2 id="JSON格式的处理"><a href="#JSON格式的处理" class="headerlink" title="JSON格式的处理"></a>JSON格式的处理</h2><ul>
-<li><strong><font size="2">当dataType为JSON时，处理JSON格式的相应数据</font></strong></li>
-</ul>
 <blockquote>
-<p>JSON（JavaScript Object Notation）是一种轻量级的数据交互格式。JSON类似于实体类对象。通常用语服务器和客户端之间传递数据</p>
+<p>在网页输入localhost:8080/项目名称/swagger-ui.html即可访问控制层和里面的方法。</p>
 </blockquote>
-<ul>
-<li><p><strong>JSON定义</strong></p>
+<blockquote>
+<blockquote>
+<p>注意：如果在创建控制层方法时没有指定连接方式，则会在网页显示所有的连接方式，如get,psot等。所以建议在使用@RequestMapper()注解时加上属性：method = RequestMethod.GET用于指定连接的方式</p>
+</blockquote>
+</blockquote>
+<h2 id="JavaMail"><a href="#JavaMail" class="headerlink" title="JavaMail"></a>JavaMail</h2><blockquote>
+<p>创建一个userService类，里面写发送邮件和验证邮件的方法。ServiceImpl内加上@Service注解，和对象</p>
+</blockquote>
+<pre><code>@Resource
+private ItripUserDao itripUserDao;    //添加对象信息
+@Resource
+private MailService mailService;    //发送邮件
+@Resource
+private RedisAPI redisAPI;        //将信息添加到Redis中</code></pre><h3 id="发送邮件"><a href="#发送邮件" class="headerlink" title="发送邮件"></a>发送邮件</h3><pre><code>void itriptxcreateUser(User user);</code></pre><blockquote>
+<p>增加用户信息、生成激活码、发送邮件、激活码存入redis</p>
+</blockquote>
 <ol>
-<li><p>定义单个对象</p>
-<pre><code> let user = {&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:&quot;18,:&quot;sex&quot;:&quot;男&quot;}</code></pre><p> 该JSON存储了一个user对象，拥有属性name，age，sex。并拥有默认值。键值对之间 用‘:’分隔。属性之间用‘,’分隔。</p>
-</li>
-<li><p>定义多个对象</p>
-<pre><code> let user = [{&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:&quot;18,:&quot;sex&quot;:&quot;男&quot;},{&quot;name&quot;:&quot;李四&quot;,&quot;age&quot;:&quot;18,:&quot;sex&quot;:&quot;男&quot;]</code></pre><p> 该JSON存储了2个对象，都有属性name,age,sex，并给了默认值。存储多个对象式需要用[]进行包裹。对象与对象之间用‘，’分隔。</p>
+<li>添加用户信息<ul>
+<li>使用dao层的添加方法将注册的信息添加到数据库，配置dao层的对象。注意自动注入</li>
+</ul>
 </li>
 </ol>
+<p>2.生成激活码<br>    * 使用MD5加密生成随机激活码，调用MD5的静态方法生成随机码</p>
+<p>3.发送邮件<br>    * 创建MailServer和impl实现发送方法：sendActivationMail，注意配置Mailserver对象，并自动注入</p>
+<p>4.激活码存入redis<br>    * 创建redisAPI，调用set方法存入数据，注意配置redisAPI对象，并自动注入</p>
+<hr>
+<h3 id="配置配置文件信息"><a href="#配置配置文件信息" class="headerlink" title="配置配置文件信息"></a>配置配置文件信息</h3><blockquote>
+<p>sendActivationMail方法：(传入收件地址和激活码)</p>
+</blockquote>
+<pre><code>@Resource
+private SimpleMailMessage simpleMailMessage;
+@Resource
+private MailSender mailSender;
+
+@Override
+public void sendActivationMail(String mailTo, String activationCode) {
+    simpleMailMessage.setTo(mailTo);
+    simpleMailMessage.setText(&quot;您的激活码为：&quot;+activationCode+&quot;；请在30分钟内激活。&quot;);
+    mailSender.send(simpleMailMessage);
+}</code></pre><blockquote>
+<p>MailServerImpl的配置文件。装配在applicationContext中。</p>
+</blockquote>
+<pre><code>&lt;bean id=&quot;simpleMailMessage&quot; class=&quot;org.springframework.mail.SimpleMailMessage&quot;&gt;
+    &lt;property name=&quot;subject&quot; value=&quot;[i旅行]请激活您的账户&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;from&quot; value=&quot;x18570421676@163.com&quot;&gt;&lt;/property&gt;
+&lt;/bean&gt;
+&lt;bean id=&quot;mailSender&quot; class=&quot;org.springframework.mail.javamail.JavaMailSenderImpl&quot;&gt;
+    &lt;property name=&quot;host&quot; value=&quot;smtp.163.com&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;port&quot; value=&quot;465&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;username&quot; value=&quot;x18570421676@163.com&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;password&quot; value=&quot;LCMTFLISFFDMKUGK&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;defaultEncoding&quot; value=&quot;UTF-8&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;javaMailProperties&quot;&gt;
+        &lt;props&gt;
+            &lt;!-- 用户验证 --&gt;
+            &lt;prop key=&quot;mail.smtp.auth&quot;&gt;true&lt;/prop&gt;
+            &lt;prop key=&quot;mail.smtp.socketFactory.class&quot;&gt;javax.net.ssl.SSLSocketFactory&lt;/prop&gt;
+            &lt;prop key=&quot;mail.smtp.socketFactory.port&quot;&gt;465&lt;/prop&gt;
+        &lt;/props&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;</code></pre><ul>
+<li>subject<ul>
+<li>发送的邮件标题</li>
+</ul>
+</li>
+<li>from<ul>
+<li>发送人邮件地址</li>
+</ul>
+</li>
+<li>host<ul>
+<li>发送邮件的服务器地址，去百度自己邮箱的服务器地址</li>
+</ul>
+</li>
+<li>port<ul>
+<li>协议端口口，同样去百度自己发邮件的协议端口</li>
+</ul>
+</li>
+<li>username<ul>
+<li>和发件人邮件地址同名</li>
+</ul>
+</li>
+<li>password<ul>
+<li>邮箱授权码</li>
+</ul>
 </li>
 </ul>
+<hr>
+<blockquote>
+<p>redisAPI类</p>
+</blockquote>
+<pre><code>private JedisPool jedisPool;
 
+public JedisPool getJedisPool() {
+    return jedisPool;
+}
+
+public void setJedisPool(JedisPool jedisPool) {
+    this.jedisPool = jedisPool;
+}
+
+/**
+    * set
+    * @param key
+    * @param value
+    */
+public String set(String key, String value){
+    Jedis jedis = jedisPool.getResource();
+    String result = jedis.set(key, value);
+    jedisPool.returnResource(jedis);
+    return result;
+}
+
+/**
+    * set
+    * @param key
+    * @param value
+    */
+public String set(String key, String value, int exprice){
+    Jedis jedis = jedisPool.getResource();
+    String result = jedis.setex(key, exprice, value);
+    jedisPool.returnResource(jedis);
+    return result;
+}
+
+/**
+    * get
+    * @param key
+    * @return
+    */
+public String get(String key){
+    Jedis jedis = jedisPool.getResource();
+    String value = jedis.get(key);
+    jedisPool.returnResource(jedis);
+    return value;
+}
+
+/**
+    * exists
+    * @param key
+    */
+public boolean exists(String key){
+    Jedis jedis = jedisPool.getResource();
+    boolean result = jedis.exists(key);
+    jedisPool.returnResource(jedis);
+    return  result;
+}
+
+/**
+    * ttl
+    * @param key
+    */
+public Long ttl(String key){
+    Jedis jedis = jedisPool.getResource();
+    Long result = jedis.ttl(key);
+    jedisPool.returnResource(jedis);
+    return  result;
+}
+
+/**
+    * del
+    * @param key
+    */
+public Long del(String key){
+    Jedis jedis = jedisPool.getResource();
+    long result = jedis.del(key);
+    jedisPool.returnResource(jedis);
+    return  result;
+}</code></pre><hr>
+<h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h2><h3 id="创建Token"><a href="#创建Token" class="headerlink" title="创建Token"></a>创建Token</h3><blockquote>
+<p>传入两个参数：request.getHeader(“user-agent”)和登录成功的对象</p>
+</blockquote>
+<pre><code>/**
+ * Tock格式
+ * PC-USERCODE-USERID-CREATIONDATE-RONDEM[6位]
+ * 客户端类型-用户的UserCode-用户的ID-当前时间-6位随机数
+ * @param userAgent
+ * @param itripUser
+ * @return
+ */
+@Override
+public String getTokens(String userAgent, ItripUser itripUser) {
+    StringBuffer token = new StringBuffer(&quot;&quot;);
+    //前缀
+    token.append(&quot;token:&quot;);
+    //获取客户端类型
+    UserAgent agent = UserAgent.parseUserAgentString(userAgent);
+    //判断是否为移动设备
+    if(agent.getOperatingSystem().isMobileDevice()){
+        //移动设备
+        token.append(&quot;MOBILE-&quot;);
+    }else{
+        //电脑端
+        token.append(&quot;PC-&quot;);
+    }
+    //用户的UserCode
+    token.append(MD5.getMd5(itripUser.getUsercode(), 32)+&quot;-&quot;);
+    //用户的ID
+    token.append(itripUser.getId().toString()+&quot;-&quot;);
+    //当前时间(年-月-日 时:分:秒)
+    token.append(new SimpleDateFormat(&quot;yyyy-MM-ddHH:mm:ss&quot;).format(new Date())+&quot;-&quot;);
+    //6位随机数
+    token.append(MD5.getMd5(userAgent, 6));
+
+    return token.toString();
+}</code></pre>
             </div>
             <hr/>
 
@@ -639,7 +781,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/01/08/ajax-de-ji-ben-yun-yong/">http://yoursite.com/2020/01/08/ajax-de-ji-ben-yun-yong/</a>
+                    <a href="http://yoursite.com/2020/06/30/chang-yong-gong-neng/">http://yoursite.com/2020/06/30/chang-yong-gong-neng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -677,12 +819,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Ajax/">
-                                    <span class="chip bg-color">Ajax</span>
+                                <a href="/tags/Swagger/">
+                                    <span class="chip bg-color">Swagger</span>
                                 </a>
                             
-                                <a href="/tags/%E5%85%A5%E9%97%A8/">
-                                    <span class="chip bg-color">入门</span>
+                                <a href="/tags/JavaMail/">
+                                    <span class="chip bg-color">JavaMail</span>
+                                </a>
+                            
+                                <a href="/tags/Token/">
+                                    <span class="chip bg-color">Token</span>
                                 </a>
                             
                         </div>
@@ -853,7 +999,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2020-01-08T09-10-58',
+        id: '2020-06-30T07-55-05',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -877,50 +1023,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/01/11/ajax-jiao-hu-tuo-zhan/">
+                <a href="/2020/06/30/chang-yong-gong-neng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Ajax交互拓展">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="常用功能">
                         
-                        <span class="card-title">Ajax交互拓展</span>
+                        <span class="card-title">常用功能</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            由于通过原生JavaScript实现Ajax并处理响应相对比较复杂，还要考虑浏览器兼容性等一系列问题。JQuery中将Ajax相关的操作都进行了封装，提供了$.get()等方以简化Ajax开发。
+                            本篇文章介绍了如何用Swagger来调试接口，使用JavaMail发送邮件和JavaMail的一些基本配置和登录后生成Token。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaScript/" class="post-category">
-                                    JavaScript
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Ajax/">
-                        <span class="chip bg-color">Ajax</span>
+                    <a href="/tags/Swagger/">
+                        <span class="chip bg-color">Swagger</span>
                     </a>
                     
-                    <a href="/tags/%E5%85%A5%E9%97%A8/">
-                        <span class="chip bg-color">入门</span>
+                    <a href="/tags/JavaMail/">
+                        <span class="chip bg-color">JavaMail</span>
+                    </a>
+                    
+                    <a href="/tags/Token/">
+                        <span class="chip bg-color">Token</span>
                     </a>
                     
                 </div>
@@ -934,31 +1086,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/30/jstl-he-el/">
+                <a href="/2020/06/23/solr-he-reds-de-ji-ben-shi-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="JSTL和EL">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Solr和Reds的基本使用">
                         
-                        <span class="card-title">JSTL和EL</span>
+                        <span class="card-title">Solr和Reds的基本使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            从后端接收数据并显示出来时如果使用JAVA代码展示数据会让页面变得臃肿。而使用JSTL和EL可以实现无JAVA代码嵌入的JSP页面开发的同时提高可读性
+                            Solr是一个独立的企业级搜索应用服务器，它对外提供类似于Web-service的API接口。用户可以通过http请求，向搜索引擎服务器提交一定格式的XML文件，生成索引。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JSP/" class="post-category">
-                                    JSP
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
                                 </a>
                             
                             
@@ -968,12 +1120,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JSTL/">
-                        <span class="chip bg-color">JSTL</span>
+                    <a href="/tags/redis/">
+                        <span class="chip bg-color">redis</span>
                     </a>
                     
-                    <a href="/tags/EL/">
-                        <span class="chip bg-color">EL</span>
+                    <a href="/tags/solr/">
+                        <span class="chip bg-color">solr</span>
                     </a>
                     
                 </div>
