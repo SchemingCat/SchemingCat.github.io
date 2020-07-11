@@ -452,6 +452,10 @@
                                 <span class="chip bg-color">Token</span>
                             </a>
                         
+                            <a href="/tags/devtools/">
+                                <span class="chip bg-color">devtools</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -482,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
 
@@ -583,7 +587,7 @@ private RedisAPI redisAPI;        //将信息添加到Redis中</code></pre><h3 i
 </li>
 </ol>
 <hr>
-<h3 id="配置配置文件信息"><a href="#配置配置文件信息" class="headerlink" title="配置配置文件信息"></a>配置配置文件信息</h3><h4>sendActivationMail方法：(传入收件地址和激活码)</h4>
+<h3 id="配置配置文件信息"><a href="#配置配置文件信息" class="headerlink" title="配置配置文件信息"></a>配置配置文件信息</h3><h3>sendActivationMail方法：(传入收件地址和激活码)</h3>
 
 <pre><code>@Resource
 private SimpleMailMessage simpleMailMessage;
@@ -596,7 +600,7 @@ public void sendActivationMail(String mailTo, String activationCode) {
     simpleMailMessage.setText(&quot;您的激活码为：&quot;+activationCode+&quot;；请在30分钟内激活。&quot;);
     mailSender.send(simpleMailMessage);
 }</code></pre><hr>
-<h4>MailServerImpl的配置文件。装配在applicationContext中。</h4>
+<h3>MailServerImpl的配置文件。装配在applicationContext中。</h3>
 
 <pre><code>&lt;bean id=&quot;simpleMailMessage&quot; class=&quot;org.springframework.mail.SimpleMailMessage&quot;&gt;
     &lt;property name=&quot;subject&quot; value=&quot;[i旅行]请激活您的账户&quot;&gt;&lt;/property&gt;
@@ -643,7 +647,7 @@ public void sendActivationMail(String mailTo, String activationCode) {
 </li>
 </ul>
 <hr>
-<h4>redisAPI类</h4>
+<h3>redisAPI类</h3>
 
 <pre><code>private JedisPool jedisPool;
 
@@ -759,7 +763,49 @@ public String getTokens(String userAgent, ItripUser itripUser) {
     token.append(MD5.getMd5(userAgent, 6));
 
     return token.toString();
-}</code></pre>
+}</code></pre><h2 id="SpringBoot热部署"><a href="#SpringBoot热部署" class="headerlink" title="SpringBoot热部署"></a>SpringBoot热部署</h2><h3 id="SpringBoot的热部署方式"><a href="#SpringBoot的热部署方式" class="headerlink" title="SpringBoot的热部署方式"></a>SpringBoot的热部署方式</h3><blockquote>
+<p>springboot有3中热部署方式</p>
+</blockquote>
+<ol>
+<li><p>使用springloaded配置pom.xml文件，使用mvn spring-boot:run启动</p>
+</li>
+<li><p>使用springloaded本地加载启动，配置jvm参数</p>
+</li>
+<li><p>使用devtools工具包，操作简单，但是每次需要重新部署</p>
+</li>
+</ol>
+<p>这里使用devtools完成热部署</p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><blockquote>
+<p>pom.xml配置</p>
+</blockquote>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+    &lt;optional&gt;true&lt;/optional&gt;
+    &lt;scope&gt;true&lt;/scope&gt;
+&lt;/dependency&gt;</code></pre><blockquote>
+<p>application.yml配置</p>
+</blockquote>
+<pre><code>spring: 
+ thymeleaf: 
+  cache: false</code></pre><h3 id="devtools的配置"><a href="#devtools的配置" class="headerlink" title="devtools的配置"></a>devtools的配置</h3><blockquote>
+<p>在application.yml中配置devtools</p>
+</blockquote>
+<pre><code>spring:
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+      additional-paths: src/main/java #重启目录
+      exclude: WEB-INF/**
+  freemarker:
+    cache: false</code></pre><h3 id="IDEA中配置"><a href="#IDEA中配置" class="headerlink" title="IDEA中配置"></a>IDEA中配置</h3><blockquote>
+<p>当修改了类文件后，idea不会自动编译，得修改idea设置。</p>
+</blockquote>
+<ol>
+<li>File-Settings-Compiler-Build Project automatically</li>
+<li>ctrl + shift + alt + / ,选择Registry,勾上 Compiler autoMake allow when app running</li>
+</ol>
+
             </div>
             <hr/>
 
@@ -832,6 +878,10 @@ public String getTokens(String userAgent, ItripUser itripUser) {
                             
                                 <a href="/tags/Token/">
                                     <span class="chip bg-color">Token</span>
+                                </a>
+                            
+                                <a href="/tags/devtools/">
+                                    <span class="chip bg-color">devtools</span>
                                 </a>
                             
                         </div>
@@ -1026,56 +1076,46 @@ public String getTokens(String userAgent, ItripUser itripUser) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/30/chang-yong-gong-neng/">
+                <a href="/2020/07/01/nginx/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="常用功能">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Nginx">
                         
-                        <span class="card-title">常用功能</span>
+                        <span class="card-title">Nginx</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本篇文章介绍了如何用Swagger来调试接口，使用JavaMail发送邮件和JavaMail的一些基本配置和登录后生成Token。
+                            Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；同时也是一个IMAP、POP3、SMTP代理服务器；Nginx可以作为一个HTTP服务器进行网站的发布处理，另外Nginx可以作为反向代理进行负载均衡的实现。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-30
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-01
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6/" class="post-category">
+                                    软件
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Swagger/">
-                        <span class="chip bg-color">Swagger</span>
-                    </a>
-                    
-                    <a href="/tags/JavaMail/">
-                        <span class="chip bg-color">JavaMail</span>
-                    </a>
-                    
-                    <a href="/tags/Token/">
-                        <span class="chip bg-color">Token</span>
+                    <a href="/tags/nginx/">
+                        <span class="chip bg-color">nginx</span>
                     </a>
                     
                 </div>
@@ -1329,7 +1369,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">45.5k</span>&nbsp;字
+                class="white-color">51.7k</span>&nbsp;字
             
             
             

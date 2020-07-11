@@ -522,7 +522,7 @@
 <li>在(实体类)src/main/java/entiy中创建QueryVo.java</li>
 <li>将所有实体类作为属性在QueryVo.java中创建。并进行封装。</li>
 <li>将dao接口的方法参数改为QueryVo：void addUser(QueryVo vo);</li>
-<li>将<insert>标签中的parameterType属性路径改为QueryVo.java的路径：src.main.java.entiy.QueryVo</li>
+<li>将<insert>标签中的parameterType属性路径改为QueryVo.java的路径：src.main.java.entiy.QueryVo</insert></li>
 <li>然后在sql语句中调用对应的参数：insert into user values(#{对象1.属性},#{对象2.属性})</li>
 <li>在测试类的调用方法时使用QueryVo作为参数传递：</li>
 <li>QueryVo vo = new QueryVo()</li>
@@ -535,7 +535,7 @@
 </blockquote>
 <ul>
 <li>在sql语句写别名，用as将数据库列名和实体类属性名一一对应</li>
-<li>使用<resultMap>标签</li>
+<li>使用<resultMap>标签</resultMap></li>
 </ul>
 <pre><code>//该标签写在dao.xml的\&lt;mapper\&gt;下
 &lt;resultMap id=&quot;自己起的名称&quot; type=&quot;实体类的路径名&quot;&gt;
@@ -555,7 +555,7 @@
     &lt;package name=&quot;src.main.java.entity&quot;&gt;&lt;/package&gt;
 &lt;/typeAliases&gt;</code></pre><p>这样在使用resultType标签或者parameterType标签时就可以直接使用src/main/java/entity下面的类名了。例如调用src/main/java/entity/user可以简写成parameterType=”user</p>
 <blockquote>
-<p>在<mappers>加入<package >标签可以省略resource或class</p>
+<p>在<mappers>加入<package>标签可以省略resource或class</package></mappers></p>
 </blockquote>
 <pre><code>&lt;package name=&quot;src.main.java.dao&quot;&gt;&lt;/package&gt;即可使用dao文件夹下的所有dao.xml配置</code></pre><hr>
 <h2 id="Mybatis连接处和事务"><a href="#Mybatis连接处和事务" class="headerlink" title="Mybatis连接处和事务"></a>Mybatis连接处和事务</h2><h3 id="Mybatis连接池"><a href="#Mybatis连接池" class="headerlink" title="Mybatis连接池"></a>Mybatis连接池</h3><hr>
@@ -844,14 +844,14 @@ select * from user
 <td align="center">服从父母</td>
 </tr>
 <tr>
-<td align="center"></center></td>
+<td align="center"></td></tr></tbody></table></center>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
-</tr>
-</tbody></table>
+
+
 <blockquote>
 <p>这时候马六除了角色这一列还有和角色相关的列之外其他的数据都相同。这个时候可以将角色和角色说明单独作为一个表，然后建立一个中间表形成多对多的关系</p>
 </blockquote>
@@ -897,7 +897,7 @@ select * from user
 <td align="center">24</td>
 </tr>
 </tbody></table>
-<p><font size="2">学生表</font></center></p>
+<p><font size="2">学生表</font></p></center><p></p>
 <center>
 
 <table>
@@ -919,7 +919,7 @@ select * from user
 <td align="center">服从父母</td>
 </tr>
 </tbody></table>
-<p><font size="2">角色表</font></center></p>
+<p><font size="2">角色表</font></p></center><p></p>
 <center>
 
 <table>
@@ -954,7 +954,7 @@ select * from user
 <td align="center">2</td>
 </tr>
 </tbody></table>
-<p><font size="2">中间表</font></center><br>这就是表的多对多关系。中间表需要将两个表的主键作为外键</p>
+<p><font size="2">中间表</font></p></center><br>这就是表的多对多关系。中间表需要将两个表的主键作为外键<p></p>
 <blockquote>
 <p>在实体类的配置文件的标签&lt;mapper&gt;里加入&lt;resultMap&gt;</p>
 </blockquote>
@@ -1543,7 +1543,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">45.5k</span>&nbsp;字
+                class="white-color">51.7k</span>&nbsp;字
             
             
             

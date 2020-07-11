@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SpringBoot, java,HTML,css">
+    <meta name="keywords" content="常用功能(二), java,HTML,css">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SpringBoot | SchemingCat的博客</title>
+    <title>常用功能(二) | SchemingCat的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SpringBoot</h1>
+                    <h1 class="description center-align post-title">常用功能(二)</h1>
                 </div>
             </div>
         </div>
@@ -440,8 +440,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/SpringBoot/">
-                                <span class="chip bg-color">SpringBoot</span>
+                            <a href="/tags/lombok/">
+                                <span class="chip bg-color">lombok</span>
                             </a>
                         
                     </div>
@@ -465,7 +465,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-13
+                    2020-07-02
                 </div>
                 
 
@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    288
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    1 分
                 </div>
                 
 
@@ -496,234 +496,76 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="什么是SpringBoot"><a href="#什么是SpringBoot" class="headerlink" title="什么是SpringBoot"></a>什么是SpringBoot</h1><blockquote>
-<p>Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。通过这种方式，Spring Boot致力于在蓬勃发展的快速应用开发领域(rapid application development)成为领导者</p>
+                <h2 id="lombok"><a href="#lombok" class="headerlink" title="lombok"></a>lombok</h2><h3 id="引入jar包"><a href="#引入jar包" class="headerlink" title="引入jar包"></a>引入jar包</h3><pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+    &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+    &lt;version&gt;1.18.12&lt;/version&gt;
+    &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;</code></pre><hr>
+<h3 id="安装lombok插件"><a href="#安装lombok插件" class="headerlink" title="安装lombok插件"></a>安装lombok插件</h3><blockquote>
+<p>在自己编程的软件内安装即可</p>
 </blockquote>
 <hr>
-<h2 id="SpringBoot的优势"><a href="#SpringBoot的优势" class="headerlink" title="SpringBoot的优势"></a>SpringBoot的优势</h2><h3 id="简化配置"><a href="#简化配置" class="headerlink" title="简化配置"></a>简化配置</h3><blockquote>
-<p>SpringBoot是对Spring的进一步封装，基于注解开发。并舍弃笨重的xml，使用yml和properties进行简要的配置即可。</p>
-</blockquote>
-<h3 id="产品级独立运行"><a href="#产品级独立运行" class="headerlink" title="产品级独立运行"></a>产品级独立运行</h3><blockquote>
-<p>每一个工程都可打包成一个jar包。其中配置了tomcat和其他servlet容器，可独立运行。这是和微服务最契合的一点。</p>
-</blockquote>
-<h3 id="强大的场景启动器"><a href="#强大的场景启动器" class="headerlink" title="强大的场景启动器"></a>强大的场景启动器</h3><blockquote>
-<p>每一个特殊的场景需求都封装成了一个starter，只需导入这个既有了这个场景所需的一切。其中包括自动化配置和依赖信息等。</p>
-</blockquote>
-<hr>
-<h2 id="SpringBoot工作部分"><a href="#SpringBoot工作部分" class="headerlink" title="SpringBoot工作部分"></a>SpringBoot工作部分</h2><ol>
-<li>starter依赖：引入特定功能的自动装配类和所需的依赖</li>
-<li>@EnableXxxx注解：启动某种功能</li>
-<li>yml或properties配置：进行配置</li>
-<li>主启动类：每个程序必须有一个主启动类</li>
-</ol>
-<hr>
-<h2 id="使用SpringBoot"><a href="#使用SpringBoot" class="headerlink" title="使用SpringBoot"></a>使用SpringBoot</h2><blockquote>
-<p>本次使用为maven项目。同时也可使用自带的模板创建，也可以手动创建maven项目然后自己配置</p>
-</blockquote>
-<h3 id="使用模板"><a href="#使用模板" class="headerlink" title="使用模板"></a>使用模板</h3><p>创建spring starter project项目，在Available搜索框搜索Spring web并将其勾选即可创建SpringBoot项目模板</p>
-<blockquote>
-<p>注意：需要在properties标签内加入子标签&lt;maven-jar-plugin.version&gt;3.0.0&lt;/maven-jar-plugin.version&gt;</p>
-</blockquote>
-<h3 id="手动创建SpringBoot项目"><a href="#手动创建SpringBoot项目" class="headerlink" title="手动创建SpringBoot项目"></a>手动创建SpringBoot项目</h3><blockquote>
-<p>配置pom.xml</p>
-</blockquote>
-<pre><code>&lt;!-- 继承SpringBoot官方指定的父工程 --&gt;
-&lt;parent&gt;
-    &lt;groupId&gt;org.springframework-boot&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
-    &lt;version&gt;2.1.6&lt;/version&gt;
-&lt;/parent&gt;
-&lt;dependencies&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
-    &lt;/dependency&gt;
-&lt;/dependencies&gt;
-
-&lt;!-- Maven构建过程相关配置 --&gt;
-&lt;build&gt;
-    &lt;!-- 构建过程中用到的插件 --&gt;
-    &lt;plugins&gt;
-        &lt;!-- 将SpringBoot打包成一个可执行的jar包 --&gt;
-        &lt;plugin&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
-        &lt;/plugin&gt;
-    &lt;/plugins&gt;
-&lt;/build&gt;</code></pre><blockquote>
-<p>创建主启动类</p>
-</blockquote>
-<pre><code>@SpringBootApplication
-public class helloWorld{
-    public static void main(String[] args){
-    SpringApplication.run(helloWorld.class,args);
-    }
-}</code></pre><hr>
-<h2 id="运行SpringBoot"><a href="#运行SpringBoot" class="headerlink" title="运行SpringBoot"></a>运行SpringBoot</h2><h3 id="在Eclipse上运行SpringBoot"><a href="#在Eclipse上运行SpringBoot" class="headerlink" title="在Eclipse上运行SpringBoot"></a>在Eclipse上运行SpringBoot</h3><p>创建Controller后点击工具类里面的boot dashboard。然后在下面出现的boot dashboard窗口点击load下拉框，点击需要启动的项目右键start运行即可。</p>
-<blockquote>
-<p>注意：这种启动方式不需要在<a href="http://localhost:8080/后面加项目名称，直接输入控制器的访问名称即可正常访问" target="_blank" rel="noopener">http://localhost:8080/后面加项目名称，直接输入控制器的访问名称即可正常访问</a></p>
-</blockquote>
-<h3 id="运行StringBootjar包"><a href="#运行StringBootjar包" class="headerlink" title="运行StringBootjar包"></a>运行StringBootjar包</h3><p>生成项目jar包：右键项目，运行Maven-install即可生成jar包<br/><br>在cmd里面进入到jar包所在的文件位置，输入java -jar xxx.jar运行命令<br/></p>
-<blockquote>
-<p>注意：生成jar包时可能会出现Perhaps you are running on a JRE rather than a JDK和Unable to find a @SpringBootConfiguration错误<br/><br>Perhaps you are running on a JRE rather than a JDK：</p>
-</blockquote>
-<p>进入Window-Preferences-Execution Environments选择jdkSE版本，从右侧添加对应的jdk<br/><br>Unable to find a @SpringBootConfiguration：进入scr/test/java里的测试类，将类上面的注解换成：SpringBootTest(classes = BootTestApplication.class)。里面映射的类是启动类</p>
-<hr>
-<h2 id="SpringBoot扫描方式"><a href="#SpringBoot扫描方式" class="headerlink" title="SpringBoot扫描方式"></a>SpringBoot扫描方式</h2><hr>
-<h3 id="默认扫描"><a href="#默认扫描" class="headerlink" title="默认扫描"></a>默认扫描</h3><blockquote>
-<p>会自动扫描主启动类所在的包和所在的子包</p>
-</blockquote>
-<hr>
-<h3 id="自定义扫描"><a href="#自定义扫描" class="headerlink" title="自定义扫描"></a>自定义扫描</h3><blockquote>
-<p>在主启动类上面加上注解：@ComponentScan。使用这个注解即可自己制定扫描的路径，如：@ComponentScan(“cn.jbit.controller”)</p>
-</blockquote>
-<blockquote>
-<p>注意：自己指定扫描路径后默认扫描会失效</p>
-</blockquote>
-<hr>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><blockquote>
-<p>如果想自定义某些功能，则需要去main/resources目录下的application.properties或application.yml里配置对应的功能</p>
-</blockquote>
-<hr>
-<h3 id="properties的常用配置"><a href="#properties的常用配置" class="headerlink" title="properties的常用配置"></a>properties的常用配置</h3><pre><code>server.port=?：//设置启动的端口号
-server.servlet.context-path=/?：//连接地址，必须用/开头</code></pre><hr>
-<h3 id="yml语法"><a href="#yml语法" class="headerlink" title="yml语法"></a>yml语法</h3><blockquote>
-<p>例如有两个语法：server.port=1000和server.servlet.context-path=/test，则可以写成：</p>
-</blockquote>
-<pre><code>server: 
- port: 1000
- servlet: 
-  context-path: /test</code></pre><blockquote>
-<p>注意：同数量的空格表示为同级目录，在写完:后需要加上空格 </p>
-</blockquote>
-<hr>
-<h4 id="值的类型"><a href="#值的类型" class="headerlink" title="值的类型"></a>值的类型</h4><p>字面量：<br/><br>普通的字符串，数值，布尔类型。</p>
-<blockquote>
-<p>注意：如果是0开头的一串数字因为会被SpringBoot按照8进制数据解析，所以则需要用’将内容包括起来</p>
-</blockquote>
-<hr>
-<h4 id="对象，Map"><a href="#对象，Map" class="headerlink" title="对象，Map"></a>对象，Map</h4><blockquote>
-<p>常规写法：</p>
-</blockquote>
-<pre><code>user: 
- id: 10
- age: 18
- name: 张三</code></pre><p>行内写法：user: {id: 10,age: 18,name: 张三}</p>
-<blockquote>
-<p>注意：行内写法的:后面需要加上空格</p>
-</blockquote>
-<hr>
-<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><blockquote>
-<p>常规写法：</p>
-</blockquote>
-<pre><code>user: 
- age: 
- - 18
- - 20
- - 18</code></pre><hr>
-<h4 id="行内写法"><a href="#行内写法" class="headerlink" title="行内写法"></a>行内写法</h4><pre><code>user: 
- age: [18,20,18]</code></pre><blockquote>
-<p>注意：-后面需要接空格</p>
-</blockquote>
-<hr>
-<h2 id="配置文件中的值注入bean"><a href="#配置文件中的值注入bean" class="headerlink" title="配置文件中的值注入bean"></a>配置文件中的值注入bean</h2><blockquote>
-<p>如果不使用注解改变日期格式，默认为xxxx/xx/xx的格式，可以在Date格式上面加上注解：@DateTimeFormat(pattern = “yyyy-MM-dd HH:mm:ss”)来改变注入的形式，加上注解后格式就变成了XXXX-XX-XX XX:XX:XX的格式</p>
-</blockquote>
-<h3 id="使用yml完成注入"><a href="#使用yml完成注入" class="headerlink" title="使用yml完成注入"></a>使用yml完成注入</h3><blockquote>
-<p>在需要注入的类上面加上注解：@component。该注解将需要注入的类加入ioc容器。然后使用@ConfigurationProperties(prefix=””)。这个注解可以将yml里的属性注入到类中</p>
-</blockquote>
-<p>日期默认格式是使用/分隔<br/></p>
-<p>在测试类(?)上面加上@RunWith(SpringRunner.class)<br/></p>
-<hr>
-<blockquote>
-<p>如果只是简单的数值，例如只有一个String类型的值，可以通过@Value注解注入到属性内，如：</p>
-</blockquote>
-<pre><code>test: 
- stringTest: &quot;测试字符串&quot;;</code></pre><blockquote>
-<p>则可在需要注入的地方加上注解：@Vaule(“${test.stringTest}”)来实现注入</p>
-</blockquote>
-<hr>
-<h2 id="使用log4j打印日志"><a href="#使用log4j打印日志" class="headerlink" title="使用log4j打印日志"></a>使用log4j打印日志</h2><blockquote>
-<p>有些日志是使用debug打印的，然而SpringBoot只会显示用info打印的数据。有的时候，比如说整合了Mybatis后想查看执行的sql就会看不见。因为打印的执行语句是使用debug打印的。这个时候就需要将debug的日志显示出来。但是因为debug的所有日志太多，会导致有些关键日志被自动清除。所有需要指定某个特定的类打印debug</p>
-</blockquote>
-<h3 id="显示所有debug"><a href="#显示所有debug" class="headerlink" title="显示所有debug"></a>显示所有debug</h3><pre><code>logging: 
- level: 
-  root: debug</code></pre><h3 id="显示某个特定类的debug"><a href="#显示某个特定类的debug" class="headerlink" title="显示某个特定类的debug"></a>显示某个特定类的debug</h3><pre><code>logging: 
- level: 
-  cn.jbit: debug</code></pre><blockquote>
-<p>注意：这里的cn.jbit就是指定的类的全限定名称</p>
-</blockquote>
-<hr>
-<h2 id="Spring注解"><a href="#Spring注解" class="headerlink" title="Spring注解"></a>Spring注解</h2><ul>
-<li>@Configuration<ul>
-<li>在类名上面使用。将一个类变成配置类，加载这个类中的配置可以取代之前的xml</li>
+<h3 id="lombok常用注解"><a href="#lombok常用注解" class="headerlink" title="lombok常用注解"></a>lombok常用注解</h3><hr>
+<h4 id="实体类常用注解"><a href="#实体类常用注解" class="headerlink" title="实体类常用注解"></a>实体类常用注解</h4><ul>
+<li>@Getter<ul>
+<li>放在类上时，自动生成该类的所有get方法</li>
+<li>放在属性上时，自动生成该属性的get方法</li>
 </ul>
+<hr>
 </li>
-<li>@Bean<ul>
-<li>在返回一个对象的方法上使用。将一个类的对象加入IOC容器</li>
+<li>@Settet<ul>
+<li>放在类上时，自动生成该类的所有set方法</li>
+<li>放在属性上时，自动生成该属性的set方法</li>
 </ul>
+<hr>
 </li>
-<li>@Import<ul>
-<li>在类名上使用，可以更简洁的将对象加入IOC容器，如：@Import(User.class)即可将User加入IOC容器。注意：默认使用无参构造器</li>
+<li>@ToString<ul>
+<li>放在类上时，自动生成toString()方法</li>
 </ul>
+<hr>
 </li>
-<li>@ComponentScan<ul>
-<li>相当于xml的context:component-scan。例：<pre><code>      @ComponentScan(
-          value=&quot;cn.jbit.component&quot;,//扫描的包
-          userDefaultFilers=fals,
-          includeFilers={
-              @Filter(type=FilterType.ANNOTATION,calsses=Controller.class)//只扫描带Controller注解的内容
-          },
-          excludeFilters={
-              @Filter(type=FilterType.ANNOTATION,classes=Service.class)//不扫描Service注解的内容
-          }
-      )</code></pre></li>
+<li>@EqualsAndHashCode<ul>
+<li>放在类上时，覆盖默认的equals和hashCode</li>
 </ul>
+<hr>
+</li>
+<li>@NonNull<ul>
+<li>放在属性上时，属性不能为空，否则抛出空指针异常。</li>
+</ul>
+<hr>
+</li>
+<li>@NoArgsConstructor<ul>
+<li>生成无参构造器</li>
+</ul>
+<hr>
+</li>
+<li>@RequiredArgsConstructor<ul>
+<li>生成包含final和@NonNull注解的成员变量的构造器</li>
+</ul>
+<hr>
+</li>
+<li>@AllArgsConstructor<ul>
+<li>生成全参构造器</li>
+</ul>
+<hr>
+</li>
+<li>@Data<ul>
+<li>作用于类上，是以下注解的集合：@ToString,@EqualsAndHashCode,@Getter,@Setter,@RequiredArgsConstructor</li>
+</ul>
+<hr>
+</li>
+<li>@Builder<ul>
+<li>作用于类上，将类转变为建造者模式</li>
+</ul>
+<hr>
+</li>
+<li>@Log<ul>
+<li>作用于类上，生成日志变量。针对不同的日志实现产品，有不同的注解</li>
+</ul>
+<hr>
 </li>
 </ul>
-<h3 id="SpringBoot注解"><a href="#SpringBoot注解" class="headerlink" title="SpringBoot注解"></a>SpringBoot注解</h3><ul>
-<li>@SpringBootConfiguration<ul>
-<li>功能和Spring的注解功能一致</li>
-</ul>
-</li>
-<li>@EnableAutoConfiguration<ul>
-<li>启用自动化配置</li>
-</ul>
-</li>
-<li>@AutoConfigurationPackage<ul>
-<li>指定自动化配置的包</li>
-</ul>
-</li>
-<li>@SpringBootApplication<ul>
-<li>表示是一个SpringBoot应用。包含@SpringBootConfiguration，@EnableAutoConfiguration，@ComponentScan</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="整合Mybatis"><a href="#整合Mybatis" class="headerlink" title="整合Mybatis"></a>整合Mybatis</h2><h3 id="加载mybatis依赖"><a href="#加载mybatis依赖" class="headerlink" title="加载mybatis依赖"></a>加载mybatis依赖</h3><pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;
-    &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;
-    &lt;version&gt;2.1.0&lt;/version&gt;
-&lt;/dependency&gt;
-
-&lt;dependency&gt;
-    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
-    &lt;artifactId&gt;druid&lt;/artifactId&gt;
-    &lt;version&gt;1.0.5&lt;/version&gt;
-&lt;/dependency&gt;</code></pre><h3 id="配置yml文件"><a href="#配置yml文件" class="headerlink" title="配置yml文件"></a>配置yml文件</h3><pre><code>spring: 
-  datasource: 
-   name: mydb
-   type: com.alibaba.druid.pool.DruidDataSource
-   url: jdbc:mysql://localhost:3306/smbms?serverTimezone=UTC
-   username: root
-   password: root
-   driver-class-name: com.mysql.cj.jdbc.Driver
-mybatis: 
- mapper-locations: classpath*:/mybatis/mapper/*dao.xml    //因为是maven项目，所以dao.xml文件存放在src/main/resources/mybatis/mapper目录下。所以这里的classpath指定的就是dao.xml文件存放的路径。后面的*dao.xml表示所有以dao.xml结尾的文件
-logging: 
-  level: 
-cn.jbit.dao: debug</code></pre><h3 id="主启动类"><a href="#主启动类" class="headerlink" title="主启动类"></a>主启动类</h3><p>在主启动类上加上注解：@MapperScan(“cn.jbit.dao”)。括号内写接口dao所在的路径，这里为cn.jbit.dao</p>
-<h3 id="测试类"><a href="#测试类" class="headerlink" title="测试类"></a>测试类</h3><p>在测试类上面加上@SpringBootTest(classes = BootTestApplication.class)注解。classes里面写主启动类</p>
 
             </div>
             <hr/>
@@ -749,7 +591,7 @@ cn.jbit.dao: debug</code></pre><h3 id="主启动类"><a href="#主启动类" cla
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/06/13/springboot/">http://yoursite.com/2020/06/13/springboot/</a>
+                    <a href="http://yoursite.com/2020/07/02/chang-yong-gong-neng-er/">http://yoursite.com/2020/07/02/chang-yong-gong-neng-er/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -787,8 +629,8 @@ cn.jbit.dao: debug</code></pre><h3 id="主启动类"><a href="#主启动类" cla
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/SpringBoot/">
-                                    <span class="chip bg-color">SpringBoot</span>
+                                <a href="/tags/lombok/">
+                                    <span class="chip bg-color">lombok</span>
                                 </a>
                             
                         </div>
@@ -959,7 +801,7 @@ cn.jbit.dao: debug</code></pre><h3 id="主启动类"><a href="#主启动类" cla
         repo: '',
         owner: '',
         admin: null,
-        id: '2020-06-13T12-10-12',
+        id: '2020-07-02T15-40-18',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -987,31 +829,31 @@ cn.jbit.dao: debug</code></pre><h3 id="主启动类"><a href="#主启动类" cla
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/23/solr-he-reds-de-ji-ben-shi-yong/">
+                <a href="/2020/07/03/springboot-san/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Solr和Reds的基本使用">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="SpringBoot(三)">
                         
-                        <span class="card-title">Solr和Reds的基本使用</span>
+                        <span class="card-title">SpringBoot(三)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Solr是一个独立的企业级搜索应用服务器，它对外提供类似于Web-service的API接口。用户可以通过http请求，向搜索引擎服务器提交一定格式的XML文件，生成索引。
+                            本文章作为SpringBoot基础配置的补充，说明了如何自定义JSON转换器，全局数据的处理，拦截器，配置AOP等功能。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-03
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
-                                    数据库
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
@@ -1021,12 +863,8 @@ cn.jbit.dao: debug</code></pre><h3 id="主启动类"><a href="#主启动类" cla
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/redis/">
-                        <span class="chip bg-color">redis</span>
-                    </a>
-                    
-                    <a href="/tags/solr/">
-                        <span class="chip bg-color">solr</span>
+                    <a href="/tags/SpringBoot/">
+                        <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
                 </div>
@@ -1040,31 +878,31 @@ cn.jbit.dao: debug</code></pre><h3 id="主启动类"><a href="#主启动类" cla
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/13/redis/">
+                <a href="/2020/07/02/springboot-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Redis">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="SpringBoot(二)">
                         
-                        <span class="card-title">Redis</span>
+                        <span class="card-title">SpringBoot(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            redis是一个key-value的临时存储系统，和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set --有序集合)和hash（哈希类型）
+                            本文章作为SpringBoot基础配置的补充，介绍了SpringBoot的常用模块，同时重点说明了Thymeleaf视图技术的使用和基础语法。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
-                                    数据库
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
@@ -1074,8 +912,8 @@ cn.jbit.dao: debug</code></pre><h3 id="主启动类"><a href="#主启动类" cla
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/redis/">
-                        <span class="chip bg-color">redis</span>
+                    <a href="/tags/SpringBoot/">
+                        <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
                 </div>
@@ -1276,7 +1114,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">45.5k</span>&nbsp;字
+                class="white-color">51.7k</span>&nbsp;字
             
             
             
