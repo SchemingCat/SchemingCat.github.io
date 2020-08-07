@@ -478,7 +478,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.2k
                 </div>
                 
 
@@ -734,6 +734,7 @@ public class user{
    driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis: 
  mapper-locations: classpath*:/mybatis/mapper/*dao.xml    //因为是maven项目，所以dao.xml文件存放在src/main/resources/mybatis/mapper目录下。所以这里的classpath指定的就是dao.xml文件存放的路径。后面的*dao.xml表示所有以dao.xml结尾的文件
+ type-aliases-package: cn.jbit.entity   //扫描实体类路径，在映射路径里设置接收的实体类时不用写全名称。
 logging: 
   level: 
 cn.jbit.dao: debug</code></pre><h3 id="主启动类"><a href="#主启动类" class="headerlink" title="主启动类"></a>主启动类</h3><p>在主启动类上加上注解：@MapperScan(“cn.jbit.dao”)。括号内写接口dao所在的路径，这里为cn.jbit.dao</p>
@@ -1300,7 +1301,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.7k</span>&nbsp;字
+                class="white-color">58.5k</span>&nbsp;字
             
             
             
